@@ -1,0 +1,49 @@
+body
+{
+ background-image: url(".//anime//kanon-background.jpg");
+ background-size: 100%;
+ background-repeat: no-repeat;
+ /*background-attachment: fixed;*/
+ text-align: center;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+button
+{
+  background-color: pink;
+  font-family: "cute",sans-serif;
+  font-size: 24px;
+  border-color: pink;
+  border-radius: 12px;
+}
+button:hover
+{
+  background-color: #D892C6;
+  border-color: #D892C6;
+}
+
+p.text
+{
+  font-size: 18px;
+  font-family: cursive;
+  border-style: solid;
+  border-color: pink;
+  border-radius: 12px;
+}
+p.cute
+{
+  text-align: left;
+  font-size: 18px;
+  font-family: cursive;
+  border-style: solid;
+  border-color: pink;
+  border-radius: 12px;
+}
+
+div.sticker
+{
+  margin-left: 550px;
+  margin-right: 550px;
+}

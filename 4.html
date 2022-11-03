@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--Choose a Color-->
+<html>
+  <title>Choose a Color</title>
+  <body>
+    <p id="sample" style="border-style: solid;">This is a text, you can change its background color and border color & width</p>
+    <p>RGB version(0~255) (Leave Blank == 0):</p>
+    <p>Border:</p>
+    <p>Red: <input type="text" id="B_R"></p>
+    <p>Green: <input type="text" id="B_G"></p>
+    <p>Blue: <input type="text" id="B_B"></p>
+    <p>Width: <input type="text" id="W"></p>
+    <p>Background:</p>
+    <p>Red: <input type="text" id="R"></p>
+    <p>Green: <input type="text" id="G"></p>
+    <p>Blue: <input type="text" id="B"></p>
+    <button type="button" id="rgb" onclick="doRGB()">Apply settings as RGB</button>
+
+    <p>&nbsp;</p>
+
+    <p># version(00~FF) (Leave Blank == 00):</p>
+    <p>Border:</p>
+    <p>Red: <input type="text" id="B_R#"></p>
+    <p>Green: <input type="text" id="B_G#"></p>
+    <p>Blue: <input type="text" id="B_B#"></p>
+    <p>Width: <input type="text" id="W#"></p>
+    <p>Background:</p>
+    <p>Red: <input type="text" id="R#"></p>
+    <p>Green: <input type="text" id="G#"></p>
+    <p>Blue: <input type="text" id="B#"></p>
+    <button type="button" id="Hex" onclick="doHex()">Apply settings as #</button>
+  </body>
+  <script>
+    function doRGB()
+    {
+      var B_R=document.getElementById("B_R").value;
+      var B_G=document.getElementById("B_G").value;
+      var B_B=document.getElementById("B_B").value;
+      var W=document.getElementById("W").value;
+      var R=document.getElementById("R").value;
+      var G=document.getElementById("G").value;
+      var B=document.getElementById("B").value;
+      const list=[B_R,B_G,B_B,W,R,G,B];
+      for(let i=0;i<list.length;i++)
+      {
+        if(list[i]=="")
+        {
+          list[i]=0;
+        }
+      }
+      var sample=document.getElementById("sample");
+      sample.style.borderColor=`rgb(${list[0]},${list[1]},${list[2]})`;
+      sample.style.width=`${list[3]}px`;
+      sample.style.background=`rgb(${list[4]},${list[5]},${list[6]})`;
+    }
+    function doHex()
+    {
+      var B_R=document.getElementById("B_R#").value;
+      var B_G=document.getElementById("B_G#").value;
+      var B_B=document.getElementById("B_B#").value;
+      var W=document.getElementById("W#").value;
+      var R=document.getElementById("R#").value;
+      var G=document.getElementById("G#").value;
+      var B=document.getElementById("B#").value;
+      const list=[B_R,B_G,B_B,W,R,G,B];
+      for(let i=0;i<list.length;i++)
+      {
+        if(list[i]=="")
+        {
+          list[i]="00";
+        }
+      }
+      var sample=document.getElementById("sample");
+      sample.style.borderColor=`#${list[0]}${list[1]}${list[2]}`;
+      sample.style.width=`${list[3]}px`;
+      sample.style.background=`#${list[4]}${list[5]}${list[6]}`;
+    }
+  </script>
+</html>
