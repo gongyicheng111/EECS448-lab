@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<body>
+  <form action="2_store.php" onsubmit="return result()" method="POST">
+    <table align="center">
+      <tbody>
+        <tr>
+          <th>Welcome to Soranohoshi's Online Store!</td>
+        </tr>
+        <tr>
+            <td> Username: <input type="text" id="username" name="username" required=""></td>
+            <td> Password: <input type="password" id="password" name="password" required=""></td>
+        </tr>
+        <tr>
+            <td> Bike $200.00</td>
+            <td> Quantity: <input type="text" id="item1" name="item1"></td>
+        </tr>
+        <tr>
+            <td> Car $20000.00</td>
+            <td> Quantity: <input type="text" id="item2" name="item2"></td>
+        </tr>
+        <tr>
+            <td>AirpPlane $200000.00</td>
+            <td> Quantity: <input type="text" id="item3" name="item3"></td>
+        </tr>
+        <tr>
+            <td>Shipping method:
+                <input type="radio" name="shipping" value="Free seven days" checked=""> Free seven days
+                <input type="radio" name="shipping" value="$50.00 overnight"> $50.00 overnight
+                <input type="radio" name="shipping" value="$5.00 three days"> $5.00 three days
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="reset" value="Reset" style="margin-left: 75%;">
+    <input type="submit" value="Submit" style="margin-left: 75%;">
+  </form>
+</body>
+<script>
+  function result()
+  {
+    let item1=document.getElementById("item1").value;
+    let item2=document.getElementById("item2").value;
+    let item3=document.getElementById("item3").value;
+    let username=document.getElementById("username").value;
+    let password=document.getElementById("password").value;
+    if(item1=="")
+    {
+      item1=0;
+    }
+    if(item2=="")
+    {
+      item2=0;
+    }
+    if(item3=="")
+    {
+      item3=0;
+    }
+
+    if(username=="")
+    {
+      alert("Please enter your username!");
+      return false;
+    }
+    if(password=="")
+    {
+      alert("Please enter your password!");
+      return false;
+    }
+    if(!Number.isInteger(item1)||!Number.isInteger(item2)||!Number.isInteger(item3))
+    {
+      alert("Please enter a int number for your purchase number!");
+      return false;
+    }
+    if(item1<0||item2<0||item3<0)
+    {
+      alert("Please enter a positive number for your purchase number!");
+      return false;
+    }
+  }
+  return true;
+</script>
